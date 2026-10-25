@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Group Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="page" data-page="group">
+<div id="nav-root"></div>
+
+<header class="phero">
+  <div class="wrap">
+    <p class="crumb">Home / Group Training</p>
+    <h1 class="h-xl">Train your crew without disrupting your schedule.</h1>
+    <p class="lead">STAT Workforce Training coordinates group instruction for construction businesses — online, in a classroom, or on your jobsite. Tell us what you need and we'll put together a quote.</p>
+  </div>
+</header>
+<div class="stripe"></div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split" style="align-items:flex-start">
+      <div class="stack">
+        <span class="eyebrow">Why group training</span>
+        <h2 class="h-lg">One session, your whole crew current</h2>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Scheduled around your jobsite, not the other way around</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>On-site, classroom, or online formats</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Coordinated through authorized training partners</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Records added straight to your crew roster</li>
+        </ul>
+        <div class="disclaimer" style="margin-top:8px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+          <div>Quotes and scheduling are coordinated with authorized providers. Pricing and availability are confirmed before anything is booked.</div>
+        </div>
+      </div>
+
+      <form class="formcard" data-req novalidate>
+        <input type="hidden" name="_subject" value="Group training quote request — STAT Workforce Training">
+        <input type="hidden" name="form" value="Group Training Quote">
+        <h3 class="h-md" style="margin-bottom:6px">Request a group training quote</h3>
+        <p class="muted" style="font-size:.95rem;margin-bottom:18px">Fields marked <span style="color:var(--orange)">*</span> are required.</p>
+        <div class="fgrid">
+          <div class="field"><label for="g-co">Company name <span class="req">*</span></label><input id="g-co" name="company" required></div>
+          <div class="field"><label for="g-name">Contact name <span class="req">*</span></label><input id="g-name" name="contact" required></div>
+          <div class="field"><label for="g-email">Email <span class="req">*</span></label><input id="g-email" name="email" type="email" required></div>
+          <div class="field"><label for="g-phone">Phone <span class="req">*</span></label><input id="g-phone" name="phone" type="tel" required></div>
+          <div class="field"><label for="g-course">Training course requested</label>
+            <select id="g-course" name="course"><option value="">Select…</option><option>OSHA 10-Hour Construction</option><option>OSHA 30-Hour Construction</option><option>NYC Site Safety Training (SST)</option><option>CPR &amp; First Aid</option><option>Forklift / Equipment</option><option>Fall Protection</option><option>Multiple / Not sure</option></select></div>
+          <div class="field"><label for="g-num">Number of employees</label><input id="g-num" name="employees" type="number" min="1" placeholder="e.g. 12"></div>
+          <div class="field"><label for="g-fmt">Preferred format</label>
+            <select id="g-fmt" name="format"><option value="">Select…</option><option>On-site / mobile</option><option>In-person classroom</option><option>Online</option><option>No preference</option></select></div>
+          <div class="field"><label for="g-date">Requested training date</label><input id="g-date" name="date" type="date"></div>
+          <div class="field full"><label for="g-loc">Jobsite or training location</label><input id="g-loc" name="location" placeholder="City, state — or jobsite address"></div>
+          <div class="field full"><label for="g-notes">Anything else?</label><textarea id="g-notes" name="notes" placeholder="Trades, certifications needed, scheduling constraints…"></textarea></div>
+        </div>
+        <div class="formok" style="margin-top:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Thanks — your request is in. We'll follow up with a quote shortly.</div>
+        <button class="btn btn--primary btn--block" type="submit" style="margin-top:18px">Request a Group Training Quote</button>
+        <p class="formnote">Prefer to talk? Call or text <b>813-812-4269</b>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="foot-root"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
