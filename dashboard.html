@@ -476,41 +476,199 @@ hr.rule{border:none;border-top:1px solid var(--line);margin:0}
 </header>
 <div class="stripe"></div>
 
+<style>
+.dash__side a{cursor:pointer}
+.dxbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:2px}
+.dxsearch{flex:1;min-width:150px;display:flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px 11px}
+.dxsearch input{border:none;outline:none;background:none;font:inherit;width:100%;color:var(--ink)}
+.dxsearch svg{width:15px;height:15px;color:var(--slate);flex-shrink:0}
+.dxchips{display:flex;gap:6px;flex-wrap:wrap}
+.dxchip{font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;padding:6px 11px;border-radius:100px;border:1px solid var(--line);background:var(--paper);color:var(--slate);cursor:pointer}
+.dxchip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.dxtbl{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.dxh,.dxr{display:grid;grid-template-columns:1.5fr 1fr 1.1fr .9fr;gap:8px;padding:10px 14px;align-items:center}
+.dxh{background:var(--mist-2);font-family:var(--mono);font-size:.64rem;letter-spacing:.04em;text-transform:uppercase;color:var(--slate)}
+.dxh span{cursor:pointer;user-select:none;display:inline-flex;gap:4px;align-items:center;white-space:nowrap}
+.dxh span.a{color:var(--orange)}
+.dxr{border-top:1px solid var(--line);font-size:.9rem;cursor:pointer}
+.dxr:hover{background:var(--mist)}
+.dxr b{font-weight:600}
+.dxr .mut{color:var(--slate)}
+.dxdetail{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;padding:2px 0}
+.dxcert{font-family:var(--mono);font-size:.68rem;padding:4px 9px;border-radius:6px;background:var(--mist);border:1px solid var(--line);display:flex;gap:7px;align-items:center;color:var(--slate)}
+.dxempty{padding:24px;text-align:center;color:var(--slate);font-size:.9rem}
+.dxsites{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px}
+.dxsite{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:15px}
+.dxsite h5{margin:0;font-family:var(--display);font-size:1.02rem}
+.dxsite .s{font-size:.82rem;color:var(--slate);margin-top:2px}
+.dxline{height:7px;border-radius:100px;background:var(--mist-2);overflow:hidden;margin:10px 0 6px}
+.dxline i{display:block;height:100%;background:var(--green)}
+.dxreq{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.dxreq span{font-family:var(--mono);font-size:.6rem;background:var(--mist);border:1px solid var(--line);border-radius:100px;padding:3px 8px;color:var(--slate)}
+.dxreports{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.dxreport{text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px 16px;cursor:pointer;font:inherit;color:var(--ink);display:flex;gap:11px;align-items:center}
+.dxreport:hover{border-color:var(--orange);background:var(--orange-tint)}
+.dxreport svg{width:19px;height:19px;color:var(--orange);flex-shrink:0}
+.dxreport b{font-weight:600;display:block}
+.dxreport small{color:var(--slate);font-size:.78rem}
+.dxtoast{position:absolute;left:50%;bottom:18px;transform:translateX(-50%) translateY(10px);background:var(--ink);color:#fff;font-size:.86rem;padding:11px 17px;border-radius:8px;opacity:0;pointer-events:none;transition:.25s;z-index:5;box-shadow:0 14px 34px -14px rgba(0,0,0,.55);display:flex;gap:9px;align-items:center}
+.dxtoast svg{width:16px;height:16px;color:#7fe0a6}
+.dxtoast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.dashwrap{position:relative}
+.dxcount{font-family:var(--mono);font-size:.7rem;color:var(--slate);margin-left:auto}
+@media(max-width:560px){.dxh,.dxr{grid-template-columns:1.4fr 1fr .9fr}.dxh span:nth-child(2),.dxr .c2{display:none}}
+</style>
 <section class="section">
   <div class="wrap">
-    <div class="dashwrap" aria-label="Full contractor dashboard preview">
+    <div class="dashwrap" aria-label="Interactive contractor dashboard preview">
       <div class="dashbar"><span class="dots"><i></i><i></i><i></i></span><span class="url">app.statosha.com/dashboard</span></div>
       <div class="dash">
         <div class="dash__side">
           <span class="b">STAT Workforce Training</span>
-          <a class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</a>
-          <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/></svg>Roster</a>
-          <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h14v16H5zM9 9h6M9 13h6"/></svg>Records</a>
-          <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"/></svg>Expirations</a>
-          <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1 1 14 0c0 4.7-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Jobsites</a>
-          <a><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v4h16v-4"/></svg>Reports</a>
+          <a data-view="overview" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</a>
+          <a data-view="roster"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/></svg>Roster</a>
+          <a data-view="records"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h14v16H5zM9 9h6M9 13h6"/></svg>Records</a>
+          <a data-view="expirations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"/></svg>Expirations</a>
+          <a data-view="jobsites"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1 1 14 0c0 4.7-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Jobsites</a>
+          <a data-view="reports"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v4h16v-4"/></svg>Reports</a>
         </div>
-        <div class="dash__main">
-          <div class="dash__row"><h4>Company overview</h4><span class="ribbon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Sample data</span></div>
-          <div class="kpis">
-            <div class="kpi"><div class="n">24</div><div class="l">Workers</div></div>
-            <div class="kpi"><div class="n ok">88%</div><div class="l">Compliant</div></div>
-            <div class="kpi"><div class="n warn">3</div><div class="l">Expiring 30d</div></div>
-            <div class="kpi"><div class="n" style="color:var(--orange)">1</div><div class="l">Overdue</div></div>
-          </div>
-          <div class="tbl">
-            <div class="tbl__h"><span>Worker</span><span>Card</span><span>Expires</span><span>Status</span></div>
-            <div class="tbl__r"><b>M. Alvarez</b><span>OSHA 30</span><span>Mar 2027</span><span class="mini ok">Current</span></div>
-            <div class="tbl__r"><b>J. Rivera</b><span>NYC SST 40-hr</span><span>Nov 2026</span><span class="mini warn">Expiring</span></div>
-            <div class="tbl__r"><b>D. Okafor</b><span>CPR / First Aid</span><span>Sep 2026</span><span class="mini bad">Overdue</span></div>
-            <div class="tbl__r"><b>T. Nguyen</b><span>Forklift</span><span>Jan 2027</span><span class="mini ok">Current</span></div>
-          </div>
-        </div>
+        <div class="dash__main" id="dxMain"></div>
       </div>
+      <div class="dxtoast" id="dxToast"></div>
     </div>
-    <p class="formnote center" style="margin-top:14px">Preview only. Figures and workers shown are examples, not real records.</p>
+    <p class="formnote center" style="margin-top:14px">Interactive demo · sample data only — not real records. The live dashboard is in development.</p>
   </div>
 </section>
+<script>
+(function(){
+  var TODAY=new Date(2026,9,26), WINDOW=90;
+  var WK=[
+    {n:'M. Alvarez',trade:'Foreman',site:'Hudson Yards',certs:{'OSHA 30':'2028-03','SST 40-hr':'2027-05','CPR':'2027-04'}},
+    {n:'J. Rivera',trade:'Laborer',site:'Hudson Yards',certs:{'OSHA 10':'2026-12','SST 30-hr':'2027-02'}},
+    {n:'D. Okafor',trade:'Electrician',site:'Brooklyn Point',certs:{'OSHA 30':'2027-06','CPR':'2027-04'}},
+    {n:'T. Nguyen',trade:'Operator',site:'Brooklyn Point',certs:{'Forklift':'2027-01','OSHA 10':'2027-02'}},
+    {n:'A. Haddad',trade:'Carpenter',site:'Hudson Yards',certs:{'OSHA 10':'2027-08','SST 30-hr':'2027-07'}},
+    {n:'L. Bianchi',trade:'Laborer',site:'Queens Depot',certs:{'OSHA 10':'2026-11'}},
+    {n:'R. Santos',trade:'Foreman',site:'Queens Depot',certs:{'OSHA 30':'2027-10','SST 40-hr':'2027-09','CPR':'2027-01'}},
+    {n:'K. Walsh',trade:'Plumber',site:'Brooklyn Point',certs:{'OSHA 10':'2026-08'}},
+    {n:'P. Georgiou',trade:'Ironworker',site:'Hudson Yards',certs:{'OSHA 30':'2028-01','Scaffold':'2027-05'}},
+    {n:'N. Abara',trade:'Laborer',site:'Queens Depot',certs:{'OSHA 10':'2027-03','SST 30-hr':'2026-12'}},
+    {n:'S. Kim',trade:'Operator',site:'Brooklyn Point',certs:{'Forklift':'2027-06','OSHA 10':'2027-06'}},
+    {n:'C. Mendez',trade:'Carpenter',site:'Hudson Yards',certs:{'OSHA 10':'2027-11','CPR':'2027-02'}}
+  ];
+  var MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var ORD={current:0,expiring:1,overdue:2}, LAB={current:'Current',expiring:'Expiring',overdue:'Overdue'}, MINI={current:'ok',expiring:'warn',overdue:'bad'};
+  function dl(s){var p=s.split('-');return Math.round((new Date(+p[0],+p[1],0)-TODAY)/86400000);}
+  function cstat(s){var d=dl(s);return d<0?'overdue':(d<=WINDOW?'expiring':'current');}
+  function mlab(s){var p=s.split('-');return MO[+p[1]-1]+' '+p[0];}
+  WK.forEach(function(w){var st='current',soon=1e9;for(var k in w.certs){var cs=cstat(w.certs[k]);if(ORD[cs]>ORD[st])st=cs;soon=Math.min(soon,dl(w.certs[k]));}w.status=st;w.soon=soon;
+    w.soonCert=Object.keys(w.certs).sort(function(a,b){return dl(w.certs[a])-dl(w.certs[b]);})[0];});
+  // flat certs
+  var CERTS=[];WK.forEach(function(w){for(var k in w.certs)CERTS.push({w:w.n,trade:w.trade,site:w.site,cert:k,date:w.certs[k],dl:dl(w.certs[k]),st:cstat(w.certs[k])});});
+
+  var nOver=WK.filter(function(w){return w.status==='overdue';}).length;
+  var nExp=WK.filter(function(w){return w.status==='expiring';}).length;
+  var pct=Math.round((WK.length-nOver)/WK.length*100);
+
+  var main=document.getElementById('dxMain'), toast=document.getElementById('dxToast');
+  var state={view:'overview',q:'',filter:'all',sort:'status',dir:1,open:null};
+
+  function esc(s){return (s+'').replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function pill(st){return '<span class="mini '+MINI[st]+'">'+LAB[st]+'</span>';}
+  function head(title){return '<div class="dash__row"><h4>'+title+'</h4><span class="ribbon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Sample data</span></div>';}
+  function countdown(d){return d<0?Math.abs(d)+' days overdue':(d===0?'due today':'in '+d+' days');}
+
+  function kpiRow(){
+    return '<div class="kpis">'+
+      '<div class="kpi"><div class="n">'+WK.length+'</div><div class="l">Workers</div></div>'+
+      '<div class="kpi"><div class="n ok">'+pct+'%</div><div class="l">Compliant</div></div>'+
+      '<div class="kpi"><div class="n warn">'+nExp+'</div><div class="l">Expiring ≤90d</div></div>'+
+      '<div class="kpi"><div class="n" style="color:var(--orange)">'+nOver+'</div><div class="l">Overdue</div></div></div>';
+  }
+
+  function overview(){
+    var attn=WK.filter(function(w){return w.status!=='current';}).sort(function(a,b){return a.soon-b.soon;});
+    var rows=attn.map(function(w){return '<div class="dxr" data-w="'+esc(w.n)+'"><b>'+esc(w.n)+'</b><span class="mut">'+esc(w.soonCert)+'</span><span class="mut c2">'+mlab(w.certs[w.soonCert])+'</span>'+pill(w.status)+'</div>';}).join('');
+    return head('Company overview')+kpiRow()+
+      '<div class="dxbar" style="margin-top:4px"><strong style="font-family:var(--display);font-size:.95rem">Needs attention</strong><span class="dxcount">'+attn.length+' of '+WK.length+' workers</span></div>'+
+      '<div class="dxtbl"><div class="dxh"><span>Worker</span><span>Card</span><span class="c2">Expires</span><span>Status</span></div>'+(rows||'<div class="dxempty">Everyone is current 🎉</div>')+'</div>';
+  }
+
+  function rosterTools(){
+    var chips=['all','current','expiring','overdue'].map(function(f){return '<button class="dxchip'+(state.filter===f?' on':'')+'" data-filter="'+f+'">'+(f==='all'?'All':LAB[f])+'</button>';}).join('');
+    return '<div class="dxbar"><label class="dxsearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg><input id="dxq" placeholder="Search workers or trades…" value="'+esc(state.q)+'"></label><div class="dxchips">'+chips+'</div></div>';
+  }
+  function rosterBody(){
+    var list=WK.filter(function(w){return (state.filter==='all'||w.status===state.filter);})
+      .filter(function(w){var q=state.q.toLowerCase();return !q||w.n.toLowerCase().indexOf(q)>-1||w.trade.toLowerCase().indexOf(q)>-1||w.site.toLowerCase().indexOf(q)>-1;});
+    var s=state.sort,d=state.dir;
+    list.sort(function(a,b){var r;if(s==='status')r=ORD[a.status]-ORD[b.status];else if(s==='worker')r=a.n.localeCompare(b.n);else if(s==='trade')r=a.trade.localeCompare(b.trade);else r=a.soon-b.soon;return r*d;});
+    function hd(key,label){return '<span data-sort="'+key+'" class="'+(s===key?'a':'')+'">'+label+(s===key?(d>0?' ▲':' ▼'):'')+'</span>';}
+    var rows=list.map(function(w){
+      var open=state.open===w.n;
+      var detail=open?'<div class="dxdetail">'+Object.keys(w.certs).map(function(k){return '<span class="dxcert">'+esc(k)+' · '+mlab(w.certs[k])+' '+pill(cstat(w.certs[k]))+'</span>';}).join('')+'</div>':'';
+      return '<div class="dxr" data-w="'+esc(w.n)+'"><b>'+esc(w.n)+'</b><span class="mut c2">'+esc(w.trade)+'</span><span class="mut">'+esc(w.site)+'</span>'+pill(w.status)+detail+'</div>';
+    }).join('');
+    return '<div class="dxtbl"><div class="dxh">'+hd('worker','Worker')+hd('trade','Trade')+hd('soon','Jobsite')+hd('status','Status')+'</div>'+(rows||'<div class="dxempty">No workers match.</div>')+'</div>';
+  }
+  function roster(){return head('Crew roster')+rosterTools()+'<div id="dxBody">'+rosterBody()+'</div>';}
+
+  function certList(sorted,countdownMode){
+    var list=CERTS.slice();
+    if(countdownMode)list.sort(function(a,b){return a.dl-b.dl;});
+    else list.sort(function(a,b){return a.w.localeCompare(b.w);});
+    var q=state.q.toLowerCase();
+    list=list.filter(function(c){return !q||c.w.toLowerCase().indexOf(q)>-1||c.cert.toLowerCase().indexOf(q)>-1;});
+    var rows=list.map(function(c){return '<div class="dxr" style="cursor:default"><b>'+esc(c.w)+'</b><span class="mut">'+esc(c.cert)+'</span><span class="mut c2">'+(countdownMode?countdown(c.dl):mlab(c.date))+'</span>'+pill(c.st)+'</div>';}).join('');
+    return '<div class="dxtbl"><div class="dxh"><span>Worker</span><span>Card</span><span class="c2">'+(countdownMode?'Countdown':'Expires')+'</span><span>Status</span></div>'+(rows||'<div class="dxempty">No records match.</div>')+'</div>';
+  }
+  function records(){return head('Training records')+
+    '<div class="dxbar"><label class="dxsearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg><input id="dxq" placeholder="Search records…" value="'+esc(state.q)+'"></label><span class="dxcount">'+CERTS.length+' cards tracked</span></div>'+
+    '<div id="dxBody">'+certList(false,false)+'</div>';}
+  function expirations(){return head('Upcoming expirations')+
+    '<div class="dxbar"><label class="dxsearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg><input id="dxq" placeholder="Search…" value="'+esc(state.q)+'"></label><span class="dxcount">soonest first</span></div>'+
+    '<div id="dxBody">'+certList(true,true)+'</div>';}
+
+  function jobsites(){
+    var sites={};WK.forEach(function(w){(sites[w.site]=sites[w.site]||[]).push(w);});
+    var REQ={'Hudson Yards':['OSHA 30','SST','CPR'],'Brooklyn Point':['OSHA 10','Forklift'],'Queens Depot':['OSHA 10','SST']};
+    var cards=Object.keys(sites).map(function(s){
+      var crew=sites[s], ok=crew.filter(function(w){return w.status!=='overdue';}).length, r=Math.round(ok/crew.length*100);
+      return '<div class="dxsite"><h5>'+esc(s)+'</h5><div class="s">'+crew.length+' workers · '+ok+' ready</div>'+
+        '<div class="dxline"><i style="width:'+r+'%;background:'+(r===100?'var(--green)':(r>=75?'var(--amber)':'var(--orange)'))+'"></i></div>'+
+        '<div class="s" style="font-weight:600;color:var(--ink)">'+r+'% jobsite-ready</div>'+
+        '<div class="dxreq">'+(REQ[s]||[]).map(function(c){return '<span>'+esc(c)+'</span>';}).join('')+'</div></div>';
+    }).join('');
+    return head('Jobsites')+'<div class="dxsites">'+cards+'</div>';
+  }
+
+  function reports(){
+    var R=[['Company compliance summary','Every worker, every card'],['Expiring in 30 / 60 / 90 days','Plan renewals ahead'],['By jobsite','Readiness per project'],['By worker','One-page training profile']];
+    return head('Reports &amp; downloads')+'<div class="dxreports">'+R.map(function(r){return '<button class="dxreport" data-report="'+esc(r[0])+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v4h16v-4"/></svg><span><b>'+esc(r[0])+'</b><small>'+esc(r[1])+'</small></span></button>';}).join('')+'</div>';
+  }
+
+  var VIEWS={overview:overview,roster:roster,records:records,expirations:expirations,jobsites:jobsites,reports:reports};
+  function render(){main.innerHTML=VIEWS[state.view]();var q=document.getElementById('dxq');if(q&&state.q){q.focus();q.setSelectionRange(q.value.length,q.value.length);}}
+  function body(){var b=document.getElementById('dxBody');if(!b)return;if(state.view==='roster')b.innerHTML=rosterBody();else if(state.view==='records')b.innerHTML=certList(false,false);else if(state.view==='expirations')b.innerHTML=certList(true,true);}
+
+  function showToast(msg){toast.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'+esc(msg);toast.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(function(){toast.classList.remove('show');},2600);}
+
+  document.querySelectorAll('.dash__side a[data-view]').forEach(function(a){a.addEventListener('click',function(){
+    document.querySelectorAll('.dash__side a').forEach(function(x){x.classList.remove('on');});a.classList.add('on');
+    state.view=a.getAttribute('data-view');state.q='';state.filter='all';state.open=null;render();});});
+
+  main.addEventListener('click',function(e){
+    var chip=e.target.closest('.dxchip');if(chip){state.filter=chip.getAttribute('data-filter');document.querySelectorAll('.dxchip').forEach(function(c){c.classList.toggle('on',c===chip);});body();return;}
+    var srt=e.target.closest('[data-sort]');if(srt){var k=srt.getAttribute('data-sort');if(state.sort===k)state.dir*=-1;else{state.sort=k;state.dir=1;}body();return;}
+    var rep=e.target.closest('[data-report]');if(rep){showToast('"'+rep.getAttribute('data-report')+'" — demo only, no file generated');return;}
+    var row=e.target.closest('.dxr[data-w]');if(row&&state.view==='roster'){var n=row.getAttribute('data-w');state.open=state.open===n?null:n;body();return;}
+    if(row&&state.view==='overview'){state.view='roster';state.q=row.getAttribute('data-w');document.querySelectorAll('.dash__side a').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-view')==='roster');});render();}
+  });
+  main.addEventListener('input',function(e){if(e.target.id==='dxq'){state.q=e.target.value;body();}});
+
+  render();
+})();
+</script>
 
 <section class="section band-mist">
   <div class="wrap">
