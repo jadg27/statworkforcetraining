@@ -536,7 +536,7 @@ hr.rule{border:none;border-top:1px solid var(--line);margin:0}
   // Paste your Formspree endpoint between the quotes to make the forms
   // email you for real, e.g. "https://formspree.io/f/abcdwxyz".
   // Leave it empty and forms just show a confirmation (no email sent).
-  var FORM_ENDPOINT = "";
+  var FORM_ENDPOINT = "https://formspree.io/f/mdegnznd";
 
   var SHIELD =
     '<svg class="brand__mark" viewBox="0 0 34 40" fill="none" aria-hidden="true">' +
@@ -663,7 +663,7 @@ hr.rule{border:none;border-top:1px solid var(--line);margin:0}
         e.preventDefault();
         if (!f.checkValidity()) { f.reportValidity(); return; }
         // No endpoint configured (e.g. preview) → just confirm.
-        if (!FORM_ENDPOINT) { succeed(); return; }
+        if (!FORM_ENDPOINT) { fail(); return; }
         if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
         fetch(FORM_ENDPOINT, {
           method: "POST",
